@@ -12,8 +12,6 @@ const Header = () => {
 						className="form-control mr-sm-2 bwm-search"
 						type="search"
 						placeholder='Try "Las vegas" etc.'
-						New
-						York
 						aria-label="Search"
 					/>
 					<button
