@@ -9,8 +9,8 @@ const RentalCardList = () => {
 	]);
 
 	const renderCardList = () => {
-		return cards.map(c => (
-			<RentalCard key={Math.random()} name={c.name} price={c.price} />
+		return cards.map((c, index) => (
+			<RentalCard key={index} name={c.name} price={c.price} />
 		));
 	};
 
