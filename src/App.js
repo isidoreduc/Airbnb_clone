@@ -3,17 +3,22 @@ import './App.css';
 import Header from './shared/Header';
 import RentalCardList from './shared/RentalCardList';
 import RentalDetail from './shared/RentalDetail';
+import { BrowserRouter, Route } from 'react-router-dom';
 //import List from './shared/List';
 
 function App() {
-	const [isRentalList, setIsRentalList] = useState('true');
+	// const [isRentalList, setIsRentalList] = useState('true');
 
 	return (
-		<div>
+		<div className="container">
 			<Header />
-			{isRentalList ? <RentalCardList /> : <RentalDetail />}
+			<BrowserRouter>
+				<Route exact path="/" component={RentalCardList} />
+				<Route exact path="/test" component={RentalDetail} />
+				{/* {isRentalList ? <RentalCardList /> : <RentalDetail />} */}
 
-			{/* <List /> */}
+				{/* <List /> */}
+			</BrowserRouter>
 		</div>
 	);
 }
