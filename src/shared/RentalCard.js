@@ -12,8 +12,10 @@ const RentalCard = ({ name, price }) => {
 				<div className="card-block">
 					<h6 className="card-subtitle">Whole Apartment &#183; New York</h6>
 					<h4 className="card-title">{name}</h4>
-					<p className="card-text">${price} per Night &#183; Free Cancelation</p>
-					<a href="#" className="card-link">
+					<p className="card-text">
+						${price} per Night &#183; Free Cancelation
+					</p>
+					<a href="google.com" className="card-link">
 						More Info
 					</a>
 				</div>
