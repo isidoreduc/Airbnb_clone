@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RentalCard = ({ name, price }) => {
+const RentalCard = props => {
 	return (
 		<div className="col-md-3 col-xs-6">
 			<div className="card bwm-card">
@@ -10,10 +10,13 @@ const RentalCard = ({ name, price }) => {
 					alt=""
 				/>
 				<div className="card-block">
-					<h6 className="card-subtitle">Whole Apartment &#183; New York</h6>
-					<h4 className="card-title">{name}</h4>
+					<h6 className="card-subtitle">
+						{props.shared ? 'Shared' : 'Whole'} {props.category}&#183;{' '}
+						{props.city}
+					</h6>
+					<h4 className="card-title">{props.title}</h4>
 					<p className="card-text">
-						${price} per Night &#183; Free Cancelation
+						${props.price} per Night &#183; Free Cancelation
 					</p>
 					<a href="google.com" className="card-link">
 						More Info
