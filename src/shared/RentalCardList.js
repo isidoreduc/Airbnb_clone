@@ -61,6 +61,7 @@ const RentalCardList = () => {
 		return cards.map(c => (
 			<RentalCard
 				key={c.id}
+				id={c.id}
 				title={c.title}
 				city={c.city}
 				price={c.dailyRate}
