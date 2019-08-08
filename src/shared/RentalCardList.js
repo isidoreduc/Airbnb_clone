@@ -78,9 +78,23 @@ const RentalCardList = () => {
 	};
 
 	// getting a random city from the data. same can be done for any other property
-	const cities = cards.map(c => c.city);
-	const randomCity = cities[Math.floor(Math.random() * cities.length)];
-	console.log(randomCity);
+	const getRandomCity = () => {
+		const cities = cards.map(c => c.city);
+		const randomCity = cities[Math.floor(Math.random() * cities.length)];
+		return randomCity;
+	};
+
+	const getRandomStreet = () => {
+		const cities = cards.map(c => c.street);
+		const randomStreet = cities[Math.floor(Math.random() * cities.length)];
+		return randomStreet;
+	};
+
+	const getRandomCategory = () => {
+		const cities = cards.map(c => c.category);
+		const randomCategory = cities[Math.floor(Math.random() * cities.length)];
+		return randomCategory;
+	};
 
 	return (
 		<div className="container">
@@ -95,15 +109,15 @@ const RentalCardList = () => {
 					add({
 						id: cards.length,
 						title: `Central Apartment ${cards.length}`,
-						city: randomCity,
-						street: 'Haupt strasse',
-						category: 'house',
+						city: getRandomCity(),
+						street: getRandomStreet(),
+						category: getRandomCategory(),
 						image: 'http://via.placeholder.com/350x250',
-						bedrooms: 9,
+						bedrooms: Math.floor(Math.random() * cards.length),
 						description: 'Very nice apartment',
-						dailyRate: 33,
-						shared: true,
-						createdAt: '24/12/2017'
+						dailyRate: Math.floor(Math.random() * 500),
+						shared: Math.random() >= 0.5,
+						createdAt: new Date().toLocaleDateString()
 					})
 				}
 			>
