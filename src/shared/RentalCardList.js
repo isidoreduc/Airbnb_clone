@@ -1,64 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import RentalCard from './RentalCard';
+import { connect } from 'react-redux';
 
-const RentalCardList = () => {
-	const [cards, setCards] = useState([
-		{
-			id: 0,
-			title: 'Central Apartment',
-			city: 'New York',
-			street: 'Times Sqaure',
-			category: 'apartment',
-			image: 'http://via.placeholder.com/350x250',
-			bedrooms: 3,
-			description: 'Very nice apartment',
-			dailyRate: 34,
-			shared: false,
-			createdAt: '24/12/2017'
-		},
-		{
-			id: 1,
-			title: 'Central Apartment 2',
-			city: 'San Francisco',
-			street: 'Main street',
-			category: 'condo',
-			image: 'http://via.placeholder.com/350x250',
-			bedrooms: 2,
-			description: 'Very nice apartment',
-			dailyRate: 12,
-			shared: true,
-			createdAt: '24/12/2017'
-		},
-		{
-			id: 2,
-			title: 'Central Apartment 3',
-			city: 'Bratislava',
-			street: 'Hlavna',
-			category: 'condo',
-			image: 'http://via.placeholder.com/350x250',
-			bedrooms: 2,
-			description: 'Very nice apartment',
-			dailyRate: 334,
-			shared: true,
-			createdAt: '24/12/2017'
-		},
-		{
-			id: 3,
-			title: 'Central Apartment 4',
-			city: 'Berlin',
-			street: 'Haupt strasse',
-			category: 'house',
-			image: 'http://via.placeholder.com/350x250',
-			bedrooms: 9,
-			description: 'Very nice apartment',
-			dailyRate: 33,
-			shared: true,
-			createdAt: '24/12/2017'
-		}
-	]);
-
+const RentalCardList = props => {
 	const renderCardList = () => {
-		return cards.map(c => (
+		return props.rntls.map(c => (
 			<RentalCard
 				key={c.id}
 				id={c.id}
@@ -70,32 +16,8 @@ const RentalCardList = () => {
 			/>
 		));
 	};
-
-	const add = obj => {
-		//setCards(cards.push(obj)); this is bad because push returns the number of elements in array, not an array
-		setCards([...cards, obj]);
-		console.log(cards);
-	};
-
-	// getting a random city from the data. same can be done for any other property
-	const getRandomCity = () => {
-		const cities = cards.map(c => c.city);
-		const randomCity = cities[Math.floor(Math.random() * cities.length)];
-		return randomCity;
-	};
-
-	const getRandomStreet = () => {
-		const cities = cards.map(c => c.street);
-		const randomStreet = cities[Math.floor(Math.random() * cities.length)];
-		return randomStreet;
-	};
-
-	const getRandomCategory = () => {
-		const cities = cards.map(c => c.category);
-		const randomCategory = cities[Math.floor(Math.random() * cities.length)];
-		return randomCategory;
-	};
-
+	debugger;
+	console.log(props);
 	return (
 		<div className="container">
 			<section id="rentalListing">
@@ -103,28 +25,13 @@ const RentalCardList = () => {
 				<div className="row">{renderCardList()}</div>
 			</section>
 			<br />
-			<button
-				className="btn btn-primary"
-				onClick={() =>
-					add({
-						id: cards.length,
-						title: `Central Apartment ${cards.length}`,
-						city: getRandomCity(),
-						street: getRandomStreet(),
-						category: getRandomCategory(),
-						image: 'http://via.placeholder.com/350x250',
-						bedrooms: Math.floor(Math.random() * cards.length),
-						description: 'Very nice apartment',
-						dailyRate: Math.floor(Math.random() * 500),
-						shared: Math.random() >= 0.5,
-						createdAt: new Date().toLocaleDateString()
-					})
-				}
-			>
-				View others
-			</button>
 		</div>
 	);
 };
 
-export default RentalCardList;
+const mapStateToProps = state => {
+	debugger;
+	return { rntls: state.rentals };
+};
+
+export default connect(mapStateToProps)(RentalCardList);
