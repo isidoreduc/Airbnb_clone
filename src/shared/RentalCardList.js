@@ -16,8 +16,7 @@ const RentalCardList = props => {
 			/>
 		));
 	};
-	debugger;
-	console.log(props);
+
 	return (
 		<div className="container">
 			<section id="rentalListing">
@@ -30,8 +29,7 @@ const RentalCardList = props => {
 };
 
 const mapStateToProps = state => {
-	debugger;
-	return { rntls: state.rentals };
+	return { rntls: state.rens };
 };
 
 export default connect(mapStateToProps)(RentalCardList);
