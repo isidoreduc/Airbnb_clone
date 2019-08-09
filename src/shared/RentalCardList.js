@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import RentalCard from './RentalCard';
 import { connect } from 'react-redux';
+import { getRentals } from '../actions';
 
 const RentalCardList = props => {
+	useEffect(() => {
+		props.dispatch(getRentals());
+	});
+
 	const renderCardList = () => {
 		return props.rntls.map(c => (
 			<RentalCard
@@ -29,7 +34,7 @@ const RentalCardList = props => {
 };
 
 const mapStateToProps = state => {
-	return { rntls: state.rens };
+	return { rntls: state.rens.data };
 };
 
 export default connect(mapStateToProps)(RentalCardList);
