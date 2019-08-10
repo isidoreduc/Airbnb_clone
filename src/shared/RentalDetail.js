@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { getRentalById } from '../actions';
 
 const RentalDetail = props => {
-	console.log(props);
 	React.useEffect(() => {
 		props.dispatch(getRentalById(props.match.params.id));
 	});
-	//debugger;
-	return <div>{props.rentalProps.title}</div>;
+	return props.rentalProps.title ? (
+		<div>{props.rentalProps.title}</div>
+	) : (
+		<div>Loading...</div>
+	);
 };
 
 const mapStateToProps = state => {
