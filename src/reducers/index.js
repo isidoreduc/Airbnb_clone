@@ -1,5 +1,10 @@
 import * as redux from 'redux';
-import { rentalReducer } from './rentals-reducer';
+import * as reducers from './rentals-reducer';
 
 export const store = () =>
-	redux.createStore(redux.combineReducers({ rens: rentalReducer }));
+	redux.createStore(
+		redux.combineReducers({
+			rentalsStored: reducers.rentalListReducer,
+			rentalStored: reducers.rentalByIdReducer
+		})
+	);

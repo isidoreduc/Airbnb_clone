@@ -1,6 +1,6 @@
 const rentals = [
 	{
-		id: 0,
+		id: '0',
 		title: 'Central Apartment',
 		city: 'New York',
 		street: 'Times Sqaure',
@@ -13,7 +13,7 @@ const rentals = [
 		createdAt: '24/12/2017'
 	},
 	{
-		id: 1,
+		id: '1',
 		title: 'Central Apartment 2',
 		city: 'San Francisco',
 		street: 'Main street',
@@ -26,7 +26,7 @@ const rentals = [
 		createdAt: '24/12/2017'
 	},
 	{
-		id: 2,
+		id: '2',
 		title: 'Central Apartment 3',
 		city: 'Bratislava',
 		street: 'Hlavna',
@@ -39,7 +39,7 @@ const rentals = [
 		createdAt: '24/12/2017'
 	},
 	{
-		id: 3,
+		id: '3',
 		title: 'Central Apartment 4',
 		city: 'Berlin',
 		street: 'Haupt strasse',
@@ -55,5 +55,12 @@ const rentals = [
 
 // usually data would come through an http request
 export const getRentals = () => {
-	return { type: 'GET_RENTALS', rentals };
+	return { type: 'GET_RENTALS', payload: rentals };
+};
+
+export const getRentalById = rentalId => {
+	return {
+		type: 'GET_RENTAL_BY_ID',
+		payload: rentals.find(item => item.id === rentalId)
+	};
 };

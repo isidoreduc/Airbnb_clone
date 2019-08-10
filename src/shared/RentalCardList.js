@@ -9,7 +9,7 @@ const RentalCardList = props => {
 	});
 
 	const renderCardList = () => {
-		return props.rntls.map(c => (
+		return props.rentalsProps.map(c => (
 			<RentalCard
 				key={c.id}
 				id={c.id}
@@ -34,7 +34,13 @@ const RentalCardList = props => {
 };
 
 const mapStateToProps = state => {
-	return { rntls: state.rens.data };
+	return { rentalsProps: state.rentalsStored.data };
 };
 
 export default connect(mapStateToProps)(RentalCardList);
+
+// redux:
+// 1. in actions we do the state transformation
+// 2. state transformed in action is sent to reducers
+// 3. from there is sent to reducer store(combine)
+// 4. from store is sent throught mapStateToProps to component
