@@ -11,8 +11,8 @@ const App = () => {
 	return (
 		<Provider store={store()}>
 			<div className="container">
-				<Header />
 				<BrowserRouter>
+					<Header />
 					<Route exact path="/" render={() => <Redirect to="/rentals" />} />
 					<Route exact path="/rentals" component={RentalCardList} />
 					<Route exact path="/rentals/:id" component={RentalDetail} />

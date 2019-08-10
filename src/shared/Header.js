@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
 		<nav className="navbar navbar-dark navbar-expand-lg">
 			<div className="container">
-				<a className="navbar-brand" href="google.com">
+				<Link to="/" className="navbar-brand">
 					Fairbnb
-				</a>
+				</Link>
 				<form className="form-inline my-2 my-lg-0">
 					<input
 						className="form-control mr-sm-2 bwm-search"
@@ -34,12 +35,12 @@ const Header = () => {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav ml-auto">
-						<a className="nav-item nav-link active" href="google.com">
+						<Link to="/" className="nav-item nav-link active">
 							Login <span className="sr-only">(current)</span>
-						</a>
-						<a className="nav-item nav-link" href="google.com">
+						</Link>
+						<Link to="/" className="nav-item nav-link" >
 							Register
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
