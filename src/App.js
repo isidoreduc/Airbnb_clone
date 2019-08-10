@@ -9,7 +9,7 @@ import { store } from './reducers';
 
 const App = () => {
 	return (
-		<Provider store={store()}>
+		<Provider store={store}>
 			<div className="container">
 				<BrowserRouter>
 					<Header />

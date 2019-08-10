@@ -61,10 +61,8 @@ export const getRentals = () => {
 export const getRentalById = rentalId => async dispatch => {
 	const response = await rentals.find(item => item.id === rentalId);
 
-	setTimeout(() => {
-		dispatch({
-			type: 'GET_RENTAL_BY_ID',
-			payload: response
-		});
-	}, 1000);
+	dispatch({
+		type: 'GET_RENTAL_BY_ID',
+		payload: response
+	});
 };
