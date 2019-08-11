@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const RentalCard = props => {
 	return (
 		<div className="col-md-3 col-xs-6">
-			<Link to={`/rentals/${props.id}`}>
+			<Link to={`/rentals/${props.id}`} className='card-link'>
 				<div className="card bwm-card">
 					<img
 						className="card-img-top"
@@ -12,7 +12,7 @@ const RentalCard = props => {
 						alt=""
 					/>
 					<div className="card-block">
-						<h6 className="card-subtitle">
+						<h6 className={`card-subtitle ${props.category}`}>
 							{props.shared ? 'Shared' : 'Whole'} {props.category}&#183;{' '}
 							{props.city}
 						</h6>
