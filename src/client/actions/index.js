@@ -1,3 +1,6 @@
+// import axios from 'axios';
+
+// const rentals = axios.get('http://localhost:5000/api/v1/rentals').toArray();
 const rentals = [
 	{
 		id: '0',
