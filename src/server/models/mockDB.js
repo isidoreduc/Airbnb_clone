@@ -42,7 +42,13 @@ class MockDB {
 		];
 	}
 
+	//gotta make sure we clean before seeding
+	async cleanDB() {
+		await Rental.deleteMany({});
+	}
+
 	seedDB() {
+		this.cleanDB();
 		this.rentals.forEach(rental => {
 			new Rental(rental).save();
 		});
