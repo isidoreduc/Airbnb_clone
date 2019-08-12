@@ -20,6 +20,7 @@ const RentalCardList = props => {
 				price={c.dailyRate}
 				shared={c.shared}
 				category={c.category}
+				image={c.image}
 			/>
 		));
 	};
