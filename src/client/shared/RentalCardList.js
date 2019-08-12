@@ -9,6 +9,7 @@ const RentalCardList = props => {
 	});
 
 	const renderCardList = () => {
+		// debugger;
 		return props.rentalsProps.map(c => (
 			<RentalCard
 				key={c.id}
