@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 import './App.css';
 import Header from './shared/Header';
-import RentalCardList from './shared/RentalCardList';
-import RentalDetail from './shared/RentalDetail';
+import RentalCardList from './shared/Rental/RentalCardList';
+import RentalDetail from './shared/Rental/RentalDetail';
 import { store } from './reducers';
 
 const App = () => {

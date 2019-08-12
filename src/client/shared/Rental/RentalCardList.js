@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import RentalCard from './RentalCard';
 import { connect } from 'react-redux';
-import { getRentals } from '../actions';
+import { getRentals } from '../../actions';
 
 const RentalCardList = props => {
 	useEffect(() => {
