@@ -6,14 +6,15 @@ import { getRentals } from '../actions';
 const RentalCardList = props => {
 	useEffect(() => {
 		props.dispatch(getRentals());
-	});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const renderCardList = () => {
 		// debugger;
 		return props.rentalsProps.map(c => (
 			<RentalCard
-				key={c.id}
-				id={c.id}
+				key={c._id}
+				id={c._id}
 				title={c.title}
 				city={c.city}
 				price={c.dailyRate}

@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RentalCard = props => {
+	debugger;
 	return (
 		<div className="col-md-3 col-xs-6">
-			<Link to={`/rentals/${props.id}`} className='card-link'>
+			{/* the id coming from express server uses a _id prop */}
+			<Link to={`/rentals/${props.id}`} className="card-link">
 				<div className="card bwm-card">
 					<img
 						className="card-img-top"

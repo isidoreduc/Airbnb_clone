@@ -5,7 +5,8 @@ import { getRentalById } from '../actions';
 const RentalDetail = props => {
 	React.useEffect(() => {
 		props.dispatch(getRentalById(props.match.params.id));
-	});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 	return props.rentalProps.title ? (
 		<div>{props.rentalProps.title}</div>
 	) : (

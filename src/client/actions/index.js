@@ -67,10 +67,10 @@ export const getRentals = () => async dispatch =>
 export const getRentalById = rentalId => async dispatch => {
 	await axios
 		.get(`http://localhost:5000/api/v1/rentals/${rentalId}`)
-		.then(rental =>
+		.then(rental => {
 			dispatch({
 				type: 'GET_RENTAL_BY_ID',
 				payload: rental.data
-			})
-		);
+			});
+		});
 };
