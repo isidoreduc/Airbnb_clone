@@ -19,7 +19,7 @@ const RentalDetail = props => {
 							<img src={props.rentalProps.image} alt="" />
 						</div>
 						<div className="col-md-6">
-							<RentalMap />
+							<RentalMap location={`${props.rentalProps.street}, ${props.rentalProps.city}`}/>
 						</div>
 					</div>
 				</div>
