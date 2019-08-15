@@ -4,7 +4,8 @@ import {
 	withScriptjs,
 	withGoogleMap,
 	GoogleMap,
-	Marker
+	Marker,
+	Circle
 } from 'react-google-maps';
 
 const GoogleMapComponent = props => {
@@ -12,7 +13,8 @@ const GoogleMapComponent = props => {
 
 	return (
 		<GoogleMap defaultZoom={8} defaultCenter={coordinates} center={coordinates}>
-			<Marker position={coordinates} />
+			{/* <Marker position={coordinates} /> */}
+			<Circle center={coordinates} radius={500} />
 		</GoogleMap>
 	);
 };
@@ -35,6 +37,7 @@ const withGeoCode = WrappedComponent => {
 			const location = this.props.location;
 			const geocoder = new window.google.maps.Geocoder();
 			geocoder.geocode({ address: location }, (result, status) => {
+				debugger;
 				if (status === 'Ok') {
 					const geometry = result[0].geometry.location;
 					const coordinates = { lat: geometry.lat(), lng: geometry.lng() };
