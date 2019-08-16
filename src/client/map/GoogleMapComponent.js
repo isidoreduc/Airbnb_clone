@@ -12,7 +12,7 @@ const GoogleMapComponent = props => {
 	const coordinates = props.coordinates;
 
 	return (
-		<GoogleMap defaultZoom={8} defaultCenter={coordinates} center={coordinates}>
+		<GoogleMap defaultZoom={13} defaultCenter={coordinates} center={coordinates}>
 			{/* <Marker position={coordinates} /> */}
 			<Circle center={coordinates} radius={500} />
 		</GoogleMap>
