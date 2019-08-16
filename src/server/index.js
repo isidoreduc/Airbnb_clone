@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const config = require('./config/dbConnection');
 const MockDB = require('./models/mockDB');
 const rentalsRouter = require('./routes/rental');
+const usersRouter = require('./routes/users');
 
 // express server
 const app = express();
@@ -21,6 +22,7 @@ mongoose
 // setting the api route for rentals
 app.use(cors());
 app.use('/api/v1/rentals', rentalsRouter);
+app.use('/api/v1/users', usersRouter);
 
 // CORS enabled
 // app.use(function(req, res, next) {
