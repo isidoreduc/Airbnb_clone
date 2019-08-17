@@ -1,8 +1,8 @@
 const express = require('express');
 const usersRouter = express.Router();
 
-usersRouter.post('', (req, res) => {});
+usersRouter.post('/auth', (req, res) => {});
 
-usersRouter.post('/:id', (req, res) => {});
+usersRouter.post('/register', (req, res) => {});
 
 module.exports = usersRouter;

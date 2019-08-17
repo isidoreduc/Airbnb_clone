@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'),
+	Schema = mongoose.Schema;
 
-const rentalSchema = new mongoose.Schema({
+const rentalSchema = new Schema({
 	title: {
 		type: String,
 		required: true,
@@ -18,7 +19,8 @@ const rentalSchema = new mongoose.Schema({
 	shared: Boolean,
 	description: { type: String, required: true },
 	dailyRate: Number,
-	createdAt: { type: Date, default: Date.now }
+	createdAt: { type: Date, default: Date.now },
+	user: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 });
 
 module.exports = mongoose.model('Rental', rentalSchema);
